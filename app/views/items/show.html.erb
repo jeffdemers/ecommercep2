@@ -6,4 +6,7 @@
 <h4>Sale Price <%= @item.price%></h4>
 <h4>Category Number <%= @item.category_id%></h4>
 <h4>Seller ID <%= @item.seller_id%></h4>
+<h4>Inventory <%= @item.inventory%></h4>
 
+<button><%= link_to "Edit Your Item", edit_item_path(@item) %></button>
+<button><%= link_to "Delete Your Item", item_path(@item), method: :delete %></button>

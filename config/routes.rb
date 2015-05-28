@@ -13,15 +13,21 @@ Rails.application.routes.draw do
 
   get "items/:id", to: "items#show", as: :item
 
-  # get "item/new", to: "items#new", as: :new_item
-  #
+  get "items/:id/edit", to: "items#edit", as: :edit_item
+
+  patch "items/:id", to: "items#update"
+
+  delete "items/:id", to: "items#destroy"
+
+
+
+
+  # get "items/new", to: "items#new", as: :new_item
+  # #
   # post "item/", to: "items#create"
-  #
-  # get "item/:id/edit", to: "itemss#edit", as: :edit_item
-  #
-  # patch "item/:id", to: "items#update"
-  #
-  # delete "item/:id", to: "items#destroy"
+
+
+
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
