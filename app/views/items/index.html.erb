@@ -1,0 +1,15 @@
+
+
+<h1> Items Index </h1>
+
+<% @items.each do |item| %>
+
+    <h4><%= item.title%></h4>
+    <%= image_tag(item.image, :class => 'photo')%>
+    <h5> <%= truncate(item.description, length: 150) %></h5>
+    <h5>Sale Price <%= item.price%></h5>
+    <%= link_to "See More", item_path(item) %>
+
+
+
+<% end %>
