@@ -1,13 +1,43 @@
-<h1>Edit</h1>
+<h1>Edit Your Item</h1>
 
-<%= form_for @item do |s| %>
+<%= form_for @item do |f| %>
 
-    <%= s.label :title %><%= s.text_field :title %>
-    <%= s.label :description %><%= s.text_field :description %>
-    <%= s.label :price %><%= s.text_field :price %>
-    <%= s.label :inventory %><%= s.text_field :inventory %>
-    <%= s.label :category_id %><%= s.text_field :category_id %>
-    <%= s.label :image %><%= s.text_field :image %>
-    <%= s.submit "Submit" %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+
+    <div>
+      <%= f.label :image %>
+      <%= f.text_field :image %>
+    </div>
+
+    <div>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+    </div>
+
+    <div>
+      <%= f.label :inventory %>
+      <%= f.text_field :inventory %>
+    </div>
+
+    <div>
+      <%= f.label :category_id %>
+      <%= f.text_field :category_id %>
+    </div>
+
+
+
+    <%= f.submit "Edit your item", "class" => "btn btn-primary" %>
 
 <% end %>
+
+<%= link_to "Back to your items", items_path, "class" => "btn btn-primary" %>
+
+
