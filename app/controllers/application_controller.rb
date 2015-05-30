@@ -14,6 +14,12 @@ class ApplicationController < ActionController::Base
     @current_seller ||= Seller.find session[:seller_id]  if session[:seller_id]
   end
 
-
+  #we add this method in under the protected section
+  def authorize
+    unless current_seller
+      flash[:error] = "you must sign in first to go to that page"
+      redirect_to new_session_path
+    end
+  end
 
 end
