@@ -1,0 +1,21 @@
+<h1>Sellers#new</h1>
+<p>Find me in app/views/sellers/new.html.erb</p>
+
+
+<%= form_for(@seller) do |f| %>
+
+    <% flash.each do |key,value|  %>
+        <div class="<%= key %>" > <%= value %> </div>
+    <% end %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Signup" %>
+<% end %>

@@ -12,8 +12,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    cat  = Category.find(params[:id])
-    @item = Item.find(params[:id])
+
   end
 
   def edit
@@ -25,10 +24,16 @@ class CategoriesController < ApplicationController
     params[:category]
     category = Category.find(params[:id])
     if category.update_attributes(params.require(:category).permit(:name, :description, :image, :category_id, :rank))
-      redirect_to home_page_path
+      redirect_to categories_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    category = Category.find(params[:id])
+    category.destroy
+    redirect_to categories_path
   end
 
 

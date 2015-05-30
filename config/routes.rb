@@ -1,23 +1,18 @@
 Rails.application.routes.draw do
-  get 'categories/edit'
 
-  get 'categories/index'
 
-  get 'categories/new'
-
-  get 'categories/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
 
-  root 'items#index'
+  root 'categories#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
-  get 'items/', to: 'items#index'
+  get 'items/', to: 'items#index', as: :items
 
   get "items/new", to: "items#new", as: :new_item
 
@@ -31,7 +26,7 @@ Rails.application.routes.draw do
 
   delete "items/:id", to: "items#destroy"
 
-  get 'categories/', to: 'categories#index', as: :home_page
+  get 'categories/', to: 'categories#index', as: :categories
 
   get "categories/:id", to: "categories#show", as: :category
 
@@ -39,6 +34,25 @@ Rails.application.routes.draw do
 
   patch "categories/:id", to: "categories#update"
 
+  delete "categories/:id", to: "categories#destroy"
+
+  # we'll set the root route to users index
+  root 'sellers#index', as: :sellers
+
+  # route to return our sign up form
+  get 'sellers/new' => 'sellers#new', as: :new_seller
+
+  #a route to post our user from to
+  post '/' => 'sellers#create'
+
+  #to display the form
+  get 'sessions/new' => 'sessions#new', as: :new_session
+
+
+  #create a new session (this is the login post)
+  post 'sessions/new' => 'sessions#create', as: :create_session
+
+  get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session
 
 
 
