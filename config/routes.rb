@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'categories/edit'
+
+  get 'categories/index'
+
+  get 'categories/new'
+
+  get 'categories/show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -23,8 +31,13 @@ Rails.application.routes.draw do
 
   delete "items/:id", to: "items#destroy"
 
+  get 'categories/', to: 'categories#index', as: :home_page
 
+  get "categories/:id", to: "categories#show", as: :category
 
+  get "categories/:id/edit", to: "categories#edit", as: :edit_category
+
+  patch "categories/:id", to: "categories#update"
 
 
 

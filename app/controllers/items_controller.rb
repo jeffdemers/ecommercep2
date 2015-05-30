@@ -30,7 +30,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def update
     params[:item]
     item = Item.find(params[:id])
