@@ -10,13 +10,13 @@ class SessionsController < ApplicationController
     if seller && seller.authenticate(seller_params[:password])
       session[:seller_id] = seller.id
 
-      flash[:success] = 'you are signed in!'
-      redirect_to sellers_path
+      flash[:success] = 'Welcome back!'
+      redirect_to create_session_path
     else
       #redirect back to the page
-      flash[:error] = 'unable to sign you in'
+      flash[:error] = 'Unable to sign in.'
 
-      redirect_to new_session_path
+      redirect_to create_session_path
     end
   end
 

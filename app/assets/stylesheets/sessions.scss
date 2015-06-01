@@ -3,10 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .success {
-  background-color: darkseagreen;
+  background-color: darkgreen;
+  font-size: 30px;
+  color: white;
 
 }
 
 .error {
-  background-color: rosybrown;
+  background-color: darkred;
+  font-size: 30px;
+  color: white;
 }

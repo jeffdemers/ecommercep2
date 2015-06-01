@@ -50,7 +50,6 @@ Rails.application.routes.draw do
   #to display the form
   get 'sessions/new' => 'sessions#new', as: :new_session
 
-
   #create a new session (this is the login post)
   post 'sessions/new' => 'sessions#create', as: :create_session
 
