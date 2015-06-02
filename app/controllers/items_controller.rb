@@ -33,12 +33,16 @@ class ItemsController < ApplicationController
   def update
     params[:item]
     item = Item.find(params[:id])
+    category = Category.find_by_name(params[:category])
+    item.categories << category
     if item.update_attributes(params.require(:item).permit(:title, :description, :price, :inventory, :image, :category_id))
       redirect_to items_path
     else
       render :edit
     end
   end
+
+
 
   def destroy
     item = Item.find(params[:id])

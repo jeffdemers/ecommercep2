@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  has_one :category
+  has_and_belongs_to_many :categories
   has_one :seller
 
   def price

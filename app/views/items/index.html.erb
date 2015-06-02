@@ -15,3 +15,7 @@
 <% end %>
 
 <%= link_to 'Add A New Item', new_item_path, "class" => "btn btn-primary" %>
+
+//
+
+<%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "name") %>

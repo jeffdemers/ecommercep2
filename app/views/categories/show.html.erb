@@ -7,3 +7,10 @@
 <%= link_to "Delete Category", category_path(@category), method: :delete, "class" => "btn btn-primary" %>
 
 
+<% @category.items.each do | item | %>
+     <h4><%= item.title%></h4>
+     <%= image_tag(item.image, :class => 'photo')%>
+     <h5> <%= truncate(item.description, length: 150) %></h5>
+     <h5>Sale Price <%= item.price%></h5>
+ <% end %>
+
