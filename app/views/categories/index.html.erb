@@ -1,5 +1,6 @@
 <% @categories.each do |category| %>
 
+
     <h4><%= category.name%></h4>
     <%= image_tag(category.image, :class => 'photo')%>
     <h5> <%= truncate(category.description, length: 150) %></h5>

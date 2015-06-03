@@ -1,4 +1,4 @@
- <h3><%= @category.name%></h3>
+ <h2><%= @category.name%></h2>
     <%= image_tag(@category.image, :class => 'photo')%>
     <h4>Description: <%= @category.description%></h4>
     <h4>Rank <%= @category.rank%></h4>
@@ -12,5 +12,7 @@
      <%= image_tag(item.image, :class => 'photo')%>
      <h5> <%= truncate(item.description, length: 150) %></h5>
      <h5>Sale Price <%= item.price%></h5>
+     <%= link_to "See More", item_path(item), "class" => "btn btn-primary" %>
  <% end %>
+
 

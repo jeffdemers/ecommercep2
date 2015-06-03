@@ -1,17 +1,52 @@
+<div class="row">
+
+  <div class="col-sm-6 col-sm-offset-3">
+
+<h2>Register to sell!</h2>
 <%= form_for(@seller) do |f| %>
 
     <% flash.each do |key,value|  %>
         <div class="<%= key %>" > <%= value %> </div>
     <% end %>
-
+<div class="form-group">
     <%= f.label :email %>
-    <%= f.email_field :email %>
-
+    <%= f.email_field :email, class: "form-control" %>
+</div>
+    <div class="form-group">
     <%= f.label :password %>
-    <%= f.password_field :password %>
-
+    <%= f.password_field :password, class: "form-control" %>
+    </div>
+    <div class="form-group">
     <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+    </div>
+    <div class="form-group">
+    <%= f.label :shop_name, "Shop Name" %>
+    <%= f.text_field :shop_name, class: "form-control" %>
+    </div>
 
-    <%= f.submit "Signup" %>
+
+    <div class="form-group">
+      <%= f.label :logo, "Logo" %>
+      <%= f.text_field :logo, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :purchase_desription, "Purchase Description" %>
+      <%= f.text_field :purchase_desription, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :business_description, "Business Description" %>
+      <%= f.text_field :business_description, class: "form-control" %>
+    </div>
+
+
+
+
+
+    <%= f.submit "Signup", "class" => "btn btn-primary" %>
 <% end %>
+
+      </div>
+    </div>

@@ -27,8 +27,16 @@
       <%= f.text_field :inventory %>
     </div>
 
+    <div>
+      <%= f.label :seller_id %>
+      <%= f.text_field :seller_id %>
+
+    </div>
 
 
+    <div>
+    <%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "name") %>
+    </div>
 
 
 

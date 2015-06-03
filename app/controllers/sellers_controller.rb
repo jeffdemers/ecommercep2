@@ -1,5 +1,13 @@
 class SellersController < ApplicationController
-  def edit
+
+  def update
+    params[:seller]
+    item = Seller.find(params[:id])
+    if seller.update_attributes(params.require(:seller).permit(:shop_name, :seller_name, :purchase_description, :business_desription, :logo))
+      redirect_to seller_account_path
+    else
+      render :edit
+    end
   end
 
   def index
@@ -17,11 +25,11 @@ class SellersController < ApplicationController
 
     if Seller.create(seller_params)
       #redirect to signed in
-      flash[:success] = 'you are registered'
+      flash[:success] = 'You have registered a new account!'
       redirect_to items_path
     else
 
-      flash[:error] = 'registration has failed'
+      flash[:error] = 'Registration Failed!'
 
       redirect_to new_session_path
 
@@ -31,7 +39,9 @@ class SellersController < ApplicationController
   private
 
   def seller_params
-    params.require(:seller).permit(:email,:password,:password_confirmation)
+    params.require(:seller).permit(:email,:password,:password_confirmation,:shop_name,:logo,:business_description,:seller_name, :purchase_desription)
   end
 
 end
+
+

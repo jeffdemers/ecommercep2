@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   delete "items/:id", to: "items#destroy"
 
+  get "items/by_seller/:id", to: "items#by_seller", as: :seller_account
+
   get 'categories/', to: 'categories#index', as: :categories
 
   get "categories/:id", to: "categories#show", as: :category
@@ -56,6 +58,8 @@ Rails.application.routes.draw do
   get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session
 
   get 'targets/' => 'targets#index', as: :targets
+
+
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
