@@ -2,7 +2,7 @@
 
   <div class="col-sm-6 col-sm-offset-3">
 
-<h2>Register to sell!</h2>
+<h1 class="jumbotron text-center">Register to sell!</h1>
 <%= form_for(@seller) do |f| %>
 
     <% flash.each do |key,value|  %>
@@ -43,9 +43,7 @@
 
 
 
-
-
-    <%= f.submit "Signup", "class" => "btn btn-primary" %>
+    <%= f.submit "Signup", "class" => "btn btn-primary center-block" %>
 <% end %>
 
       </div>
