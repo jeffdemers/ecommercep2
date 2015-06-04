@@ -1,19 +1,28 @@
+<div class="row text-center">
 <% @categories.each do |category| %>
 
+      <div class="col-md-6 col-sm-0 hero-feature">
+        <div class="thumbnail">
 
-    <h4><%= category.name%></h4>
-    <%= image_tag(category.image, :class => 'photo')%>
+    <%= image_tag(category.image, :class => 'catindexphoto')%>
+          <h4><%= category.name%></h4>
     <h5> <%= truncate(category.description, length: 150) %></h5>
     <h5>Rank <%= category.rank%></h5>
     <h5>Category ID <%= category.id%></h5>
 
     <%= link_to "Show all items in this Category", category_path(category), "class" => "btn btn-primary" %>
 
-
-
-
-
+</div>
+      </div>
 
 <% end %>
+</div>
+
+
+
+
+
+
+
 
 

@@ -1,7 +1,8 @@
 <div class="col-md-9">
 
-  <div class="thumbnail">
-    <img class="img-responsive" <%= src=image_tag(@item.image, :class => 'photo')%>
+  <div class="itemshowphoto">
+    <img class="img-responsive" <%= src=image_tag(@item.image, :class => 'itemshowphoto')%>
+    </div>
     <div class="caption-full">
       <h4 class="pull-right"><%= @item.price%></h4>
       <h4><a href="#"><%= @item.title%></a>

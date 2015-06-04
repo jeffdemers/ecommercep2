@@ -7,15 +7,31 @@
 <h1>Your items</h1>
 
 
-<% @items.each do |item| %>
-
-    <h4><%= item.title%></h4>
-    <%= image_tag(item.image, :class => 'photo')%>
-    <h5> <%= truncate(item.description, length: 150) %></h5>
-    <h5>Sale Price <%= item.price%></h5>
-    <%= link_to "See More", item_path(item), "class" => "btn btn-primary" %>
 
 
 
+<div class="row text-center">
 
-<% end %>
+
+  <% @items.each do | item | %>
+      <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="thumbnail">
+          <%= image_tag(item.image, :class => 'picture')%>
+          <div class="caption">
+            <b><%= item.title%></b>
+            <br>
+            <%= truncate(item.description, length: 120) %>
+            <p></p>
+            <b>Sale Price</b>
+            <br>
+            <%= item.price%>
+            <br>
+            <%= link_to "See More", item_path(item), "class" => "btn btn-primary" %>
+          </div>
+
+
+        </div>
+      </div>
+
+  <% end %>
+</div>
