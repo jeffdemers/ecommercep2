@@ -9,8 +9,6 @@ class ItemsController < ApplicationController
   @item = Item.find(params[:id])
   @seller = @item.seller
 
-
-
   end
 
   def edit
