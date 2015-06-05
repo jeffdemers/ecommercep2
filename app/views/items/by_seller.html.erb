@@ -1,13 +1,17 @@
 
+<h1 class ="jumbotron"><%= src=image_tag(@seller.logo,:class => 'logo')%>     <%=@seller.shop_name%> Seller Account</h1>
+
+
+
+
 <h1>Add New Inventory</h1>
+
+
 
 <%= link_to 'Add A New Item', new_item_path, "class" => "btn btn-primary" %>
 
 
-<h1>Your items</h1>
-
-
-
+<h1>Edit /Delete Your Items</h1>
 
 
 <div class="row text-center">
@@ -27,6 +31,7 @@
             <%= item.price%>
             <br>
             <%= link_to "See More", item_path(item), "class" => "btn btn-primary" %>
+
           </div>
 
 

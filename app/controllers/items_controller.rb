@@ -7,6 +7,8 @@ class ItemsController < ApplicationController
 
   def show
   @item = Item.find(params[:id])
+  @seller = @item.seller
+
 
   end
 
@@ -53,6 +55,7 @@ class ItemsController < ApplicationController
   # //find all items by seller(current seller)
   def by_seller
     @items = Item.where(seller: current_seller)
+    @seller = Seller.find(params[:id])
 
   end
 
