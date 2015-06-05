@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   @seller = @item.seller
 
 
+
   end
 
   def edit
@@ -28,7 +29,7 @@ class ItemsController < ApplicationController
     item.categories << category
     current_seller.items << item
     if item.save
-      redirect_to items_path
+      redirect_to seller_account_path(current_seller.id)
     else
       render :new
     end
@@ -39,7 +40,7 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     category = Category.find_by_name(params[:category])
     if item.update_attributes(params.require(:item).permit(:seller_id, :title, :description, :price, :inventory, :image, :category_id))
-      redirect_to items_path
+      redirect_to seller_account_path(current_seller.id)
     else
       render :edit
     end

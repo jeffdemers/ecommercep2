@@ -4,11 +4,10 @@
     <img class="img-responsive" <%= src=image_tag(@item.image, :class => 'itemshowphoto')%>
     </div>
     <div class="caption-full">
-      <h4 class="pull-right"><%= @item.price%></h4>
-      <h4><a href="#"><%= @item.title%></a>
-      </h4>
+      <h3 class="pull-right"><%= @item.price%></h3>
+      <h3><a href="#"><%= @item.title%></a></h3>
 
-      <p>Description: <%= @item.description%></p>
+      <h4>Description: <%= @item.description%></h4>
 
     <div class="ratings">
       <p class="pull-right">3 reviews</p>
@@ -33,18 +32,26 @@
   <footer>
     <div class="row">
       <div class="col-lg-12">
-        <h5>Sold by and Ships by  <%=@seller.shop_name%>     <%= src=image_tag(@seller.logo,:class => 'logo')%></h5>
-        <h5>Seller ID <%= @item.seller_id%></h5>
+        <h4><b>Sold by and Ships by:</b>  <%= src=image_tag(@seller.logo,:class => 'logo')%>     <%=@seller.shop_name%>     </h4>
+        <br>
+        <h4><b>About this Seller:</b> <%= @seller.business_description %></h4>
+        <h4><b>Purchase Details:</b> <%= @seller.purchase_desription %></h4>
+        <br>
         <h5>Inventory <%= @item.inventory%></h5>
 
-        <% if current_seller %>
 
 
 
+        <% if current_seller == nil%>
+            <%else%>
+            <% if @item.seller_id == current_seller.id %>
 
         <%= link_to "Edit Your Item", edit_item_path(@item),"class" => "btn btn-primary" %>
         <%= link_to "Delete Your Item", item_path(@item), method: :delete, "class" => "btn btn-primary" %>
             <% end %>
+            <%end%>
+
+
       </div>
     </div>
   </footer>

@@ -40,11 +40,13 @@ Rails.application.routes.draw do
 
   delete "categories/:id", to: "categories#destroy"
 
-  # we'll set the root route to users index
+
   root 'sellers#index', as: :sellers
 
   # route to return our sign up form
   get 'sellers/new' => 'sellers#new', as: :new_seller
+
+  get 'sellers/edit' => 'sellers#edit', as: :edit_seller
 
   #a route to post our user from to
   post '/' => 'sellers#create'
