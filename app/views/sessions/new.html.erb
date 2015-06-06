@@ -1,6 +1,9 @@
 
 <div class="row">
 
+  <h1 class="jumbotron text-center">Seller Account Sign In</h1>
+
+
   <div class="col-sm-4 col-sm-offset-4">
 
 <%= form_for @seller, url: create_session_path do |f| %>
@@ -19,9 +22,12 @@
     <%= f.password_field :password, class: "form-control" %>
     </div>
     <div>
-    <%= f.submit "Login", "class" => "btn btn-primary" %>
+    <%= f.submit "Sign In", "class" => "btn btn-primary center-block" %>
     </div>
 
 <% end %>
       </div>
     </div>
+<br>
+<p class="text-center">Want to list your items but have no account?<br>
+  <%= link_to 'Register to sell here!', new_seller_path%> </p>

@@ -9,29 +9,34 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" href="#">Pocket Shop</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-left">
         <li>
-        <%= link_to 'Categories', categories_path%>
+        <%= link_to 'Home', categories_path%>
         </li>
         <li>
-          <%= link_to 'Items', items_path%>
+          <%= link_to 'See all Items', items_path%>
         </li>
 
-        <li>
-          <%= link_to 'Log In/ Log Out', destroy_session_path%>
+        </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="inline-overlay-trigger">
+          <%= link_to 'Sign In/Out', destroy_session_path%>
         </li>
 
 
         <li>
+          <% if current_seller == nil %>
           <%= link_to 'New Seller Registration', new_seller_path%>
+              <% end %>
         </li>
-        <li>
-          <% if current_seller != nil%>
-              <%= link_to 'Your Seller Account', seller_account_path(current_seller.id) %>
+        <% if current_seller != nil%>
+        <li class="seller-account">
+
+              <%= link_to ' Seller Account', seller_account_path(current_seller.id) %>
               <% end%>
         </li>
 

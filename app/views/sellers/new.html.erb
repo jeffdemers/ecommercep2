@@ -2,7 +2,7 @@
 
   <div class="col-sm-6 col-sm-offset-3">
 
-<h1 class="jumbotron text-center">Register to sell!</h1>
+<h1 class="jumbotron text-center">Register to Sell</h1>
 <%= form_for(@seller) do |f| %>
 
     <% flash.each do |key,value|  %>
@@ -10,40 +10,39 @@
     <% end %>
 <div class="form-group">
     <%= f.label :email %>
-    <%= f.email_field :email, class: "form-control" %>
+    <%= f.email_field :email, class: "form-control", placeholder:"example@example.com" %>
 </div>
     <div class="form-group">
     <%= f.label :password %>
-    <%= f.password_field :password, class: "form-control" %>
+    <%= f.password_field :password, class: "form-control", placeholder:"your 8 or more digit password" %>
     </div>
     <div class="form-group">
     <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation, class: "form-control" %>
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder:"confirm your password" %>
     </div>
     <div class="form-group">
     <%= f.label :shop_name, "Shop Name" %>
-    <%= f.text_field :shop_name, class: "form-control" %>
+    <%= f.text_field :shop_name, class: "form-control", placeholder:"shop name that will be shown to users" %>
     </div>
 
-
     <div class="form-group">
-      <%= f.label :logo, "Logo" %>
-      <%= f.text_field :logo, class: "form-control" %>
+      <%= f.label :logo, "Logo"%>
+      <%= f.text_field :logo, class: "form-control", placeholder:"URL with your company logo"%>
     </div>
 
     <div class="form-group">
       <%= f.label :purchase_desription, "Purchase Description" %>
-      <%= f.text_field :purchase_desription, class: "form-control" %>
+      <%= f.text_field :purchase_desription, class: "form-control", placeholder:"describe how a customer will contact you to make a purchase." %>
     </div>
 
     <div class="form-group">
       <%= f.label :business_description, "Business Description" %>
-      <%= f.text_field :business_description, class: "form-control" %>
+      <%= f.text_field :business_description, class: "form-control", placeholder:"describe your business for customers." %>
     </div>
 
 
 
-    <%= f.submit "Signup", "class" => "btn btn-primary center-block" %>
+    <%= f.submit "Start Selling!", "class" => "btn btn-primary center-block" %>
 <% end %>
 
       </div>
