@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="item">
-      <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+      <img class="third-slide"  <%=image_tag("camera.jpg", alt: "camera main")%>>
       <div class="container">
         <div class="carousel-caption">
           <h1>One more for good measure.</h1>
@@ -60,11 +60,6 @@
     <%= image_tag(category.image, :class => 'catindexphoto')%>
           <h4><%= category.name%></h4>
     <h5> <%= truncate(category.description, length: 150) %></h5>
-    <h5>Rank <%= category.rank%></h5>
-    <h5>Category ID <%= category.id%></h5>
-
-
-
 
     <%= link_to "All items in this Category", category_path(category), "class" => "btn btn-primary" %>
 
