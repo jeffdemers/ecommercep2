@@ -20,15 +20,19 @@
         <li>
           <%= link_to 'Items', items_path%>
         </li>
+
         <li>
-          <%= link_to 'Log In / Seller Account', new_session_path%>
+          <%= link_to 'Log In/ Log Out', destroy_session_path%>
         </li>
-        <li>
-          <%= link_to 'Log Out', destroy_session_path%>
-        </li>
+
 
         <li>
           <%= link_to 'New Seller Registration', new_seller_path%>
+        </li>
+        <li>
+          <% if current_seller != nil%>
+              <%= link_to 'Your Seller Account', seller_account_path(current_seller.id) %>
+              <% end%>
         </li>
 
 
