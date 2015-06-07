@@ -1,15 +1,17 @@
 
-<h1 class ="jumbotron text-center"><%= src=image_tag(@seller.logo,:class => 'logo')%>     <%=@seller.shop_name%> Seller Account</h1>
+<h1 class ="jumbotron text-center"><%= src=image_tag(@seller.logo,:class => 'logo')%>     <%=@seller.shop_name%> <br> Seller Account</h1>
+
+<div class="row">
+  <div class="col-md-6 col-sm-3">
 
 
-<h1>Add New Inventory</h1>
 
+<h3>Add New Inventory <%= link_to 'Add A New Item', new_item_path, "class" => "btn btn-primary" %> </h3>
+ <!--link_to "Edit Seller Account", edit_seller_path(@seller),"class" => "btn btn-primary" -->
+<h3>Edit or Remove Items</h3>
 
-<%= link_to 'Add A New Item', new_item_path, "class" => "btn btn-primary" %>
-
-
-<h1>Edit /Delete Your Items</h1>
-
+  </div>
+</div>
 
 <div class="row text-center">
 
@@ -19,9 +21,9 @@
         <div class="thumbnail">
           <%= image_tag(item.image, :class => 'picture')%>
           <div class="caption">
-            <b><%= item.title%></b>
+            <b><%= truncate(item.title, length: 24)%></b>
             <br>
-            <%= truncate(item.description, length: 120) %>
+            <%= truncate(item.description, length: 100) %>
             <p></p>
             <b>Sale Price</b>
             <br>
@@ -37,3 +39,5 @@
 
   <% end %>
 </div>
+
+

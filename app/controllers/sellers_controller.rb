@@ -3,12 +3,19 @@ class SellersController < ApplicationController
   def update
     params[:seller]
     item = Seller.find(params[:id])
-    if seller.update_attributes(params.require(:seller).permit(:shop_name, :seller_name, :purchase_description, :business_desription, :image, :category_id))
-      redirect_to items_path
+    if seller.update_attributes(params.require(:seller).permit(:shop_name, :seller_name, :purchase_description, :business_desription, :logo))
+      redirect_to seller_account_path(current_seller.id)
     else
       render :edit
     end
   end
+
+
+  def edit
+    @seller = Seller.find(params[:id])
+
+  end
+
 
   def index
   end

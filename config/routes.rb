@@ -43,13 +43,13 @@ Rails.application.routes.draw do
 
   root 'sellers#index', as: :sellers
 
-  # route to return our sign up form
-  get 'sellers/new' => 'sellers#new', as: :new_seller
+  get 'sellers/new', to: 'sellers#new', as: :new_seller
 
-  get 'sellers/edit' => 'sellers#edit', as: :edit_seller
+  get "sellers/:id/edit", to: "sellers#edit", as: :edit_seller
 
-  #a route to post our user from to
-  post '/' => 'sellers#create'
+  patch "sellers/:id", to: "sellers#update"
+
+  post '/', to: 'sellers#create'
 
   #to display the form
   get 'sessions/new' => 'sessions#new', as: :new_session

@@ -60,10 +60,11 @@
 
     <%= image_tag(category.image, :class => 'catindexphoto')%>
           <h4><%= category.name%></h4>
-    <h5> <%= truncate(category.description, length: 150) %></h5>
+    <h5> <%= truncate(category.description, length: 120) %></h5>
 
     <%= link_to "All items in this Category", category_path(category), "class" => "btn btn-primary" %>
-
+<br>
+          <br>
 </div>
       </div>
 

@@ -1,5 +1,9 @@
 @import "bootstrap";
 
+.item-title{
+  color:cornflowerblue;
+}
+
 .thumbnail > img,
 .thumbnail a > img {
   display: block;
@@ -11,12 +15,17 @@
 
 .img-responsive {
   display: block;
-  max-width: 600px;
-
+  max-width: 400px;
   height: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
+.footer {
+  background-color: lightgrey;
+  height: 200px;
 
+}
 
 .logo{
   width: 25px;
@@ -34,7 +43,6 @@
 
 .catphoto {
   width: 800px;
-  margin: inherit;
 
 }
 
@@ -172,4 +180,8 @@
 
 .navbar-inverse .navbar-brand {
   color: #f39c12;
+}
+
+body{
+  font-family: 'PT Sans', sans-serif;
 }
