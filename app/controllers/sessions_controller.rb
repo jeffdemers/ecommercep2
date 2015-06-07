@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
     @seller = Seller.new
   end
 
-  #the following methods can be placed after the 'new' action method
   def create
     seller = Seller.where(email: seller_params[:email]).first
 

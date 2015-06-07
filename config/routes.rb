@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   get 'targets/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -41,16 +39,6 @@ Rails.application.routes.draw do
   delete "categories/:id", to: "categories#destroy"
 
 
-  root 'sellers#index', as: :sellers
-
-  get 'sellers/new', to: 'sellers#new', as: :new_seller
-
-  get "sellers/:id/edit", to: "sellers#edit", as: :edit_seller
-
-  patch "sellers/:id", to: "sellers#update"
-
-  post '/', to: 'sellers#create'
-
   #to display the form
   get 'sessions/new' => 'sessions#new', as: :new_session
 
@@ -58,6 +46,18 @@ Rails.application.routes.draw do
   post 'sessions/new' => 'sessions#create', as: :create_session
 
   get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session
+
+  root 'sellers#index', as: :sellers
+
+  get 'sellers/new', to: 'sellers#new', as: :new_seller
+
+  post '/', to: 'sellers#create'
+
+  # get "sellers/:id/edit", to: "sellers#edit", as: :edit_seller
+  #
+  # patch "sellers/:id", to: "sellers#update"
+
+
 
   get 'targets/' => 'targets#index', as: :targets
 
