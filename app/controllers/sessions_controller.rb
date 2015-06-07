@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:seller_id] = nil
-    flash[:error] = ''
+    flash[:error] = 'You have signed out'
     redirect_to new_session_path
   end
 

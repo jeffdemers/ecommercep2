@@ -24,9 +24,17 @@
         </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="inline-overlay-trigger">
-          <%= link_to 'Sign In/Out', destroy_session_path%>
+          <% if current_seller == nil %>
+          <%= link_to 'Sign In', destroy_session_path%>
+              <% end %>
 
         </li>
+              <li class="inline-overlay-trigger">
+                <% if current_seller != nil %>
+                    <%= link_to 'Sign Out', destroy_session_path%>
+                    <% end %>
+
+                    </li>
 
 
         <li>
