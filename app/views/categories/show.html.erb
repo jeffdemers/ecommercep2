@@ -8,7 +8,7 @@
   </div>
 </div>
 
-      <p class="text-center"><b>Description</b><%= @category.description%></p>
+      <p class="text-center"><b>Description </b><%= @category.description%></p>
 <br>
 
 <h2 class="text-center">See All Items for Sale in <%= @category.name%></h2>
@@ -21,9 +21,9 @@
         <div class="thumbnail">
           <%= image_tag(item.image, :class => 'picture')%>
           <div class="caption">
-          <b><%= truncate(item.title, length: 18)%></b>
+          <b><%= truncate(item.title, length: 15)%></b>
             <br>
-      <%= truncate(item.description, length: 115) %>
+      <%= truncate(item.description, length: 90) %>
             <p></p>
      <b>Sale Price</b>
             <br>
@@ -39,7 +39,7 @@
   <% end %>
   </div>
 
-<!-- link_to "Edit Category", edit_category_path(@category),"class" => "btn btn-primary" %>-->
+<%=link_to "Edit Category", edit_category_path(@category),"class" => "btn btn-primary" %>
 <!--link_to "Delete Category", category_path(@category), method: :delete, "class" => "btn btn-primary" %>-->
 
 
