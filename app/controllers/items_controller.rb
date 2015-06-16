@@ -50,7 +50,6 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
-
   # //find all items by seller(current seller)
   def by_seller
     @items = Item.where(seller: current_seller)
