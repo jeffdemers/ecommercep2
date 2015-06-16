@@ -83,3 +83,9 @@ production:
   database: ecommercep2_production
   username: ecommercep2
   password: <%= ENV['ECOMMERCEP2_DATABASE_PASSWORD'] %>
+
+
+  test:
+    adapter: postgresql
+    database: travis_ci_test
+    username: postgres
