@@ -62,8 +62,6 @@ development:
     adapter: postgresql
     database: travis_ci_test
     username: postgres
-
-
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -88,4 +86,3 @@ production:
   database: ecommercep2_production
   username: ecommercep2
   password: <%= ENV['ECOMMERCEP2_DATABASE_PASSWORD'] %>
-
