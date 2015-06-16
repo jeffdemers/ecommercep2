@@ -1,9 +1,9 @@
 language: ruby
-  rvm:
-    - 2.0.0-p481
+rvm:
+  - 2.0.0-p481
 branches:
   only:
-      - master
+    - master
 install:
   - "travis_retry bundle install"
 
