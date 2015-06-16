@@ -1,11 +1,18 @@
 language: ruby
 rvm:
-  - 2.0.0-p481
+- 2.0.0-p481
 branches:
   only:
-    - master
+  - master
 install:
-  - "travis_retry bundle install"
-
+- travis_retry bundle install
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
+- psql -c 'create database travis_ci_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: fZaexu/wRrst0ByPGeQPq4HAk4Qr/CTihZfBMYU3JNHwaEic/Fos7NsomG8SUUZYHUpW+xV7DD/ak/mAgNhArFx4WqvL5TXAc24duAJon9leVtwkUlSI+NrhTJXV26XAiAgIc3omaC13Q9d9s+WX2iyi6nOa44LKeYY9hyqFl17DfKazz6qvvbNnqSPOMVzu7UtRNzs+VGiGXS33YPZFGB2VB3m+lRgVYsOq5OGodFW5puqd/KOtPHoVunX2rJ6/kud65iDr0hUGdUsaCizYc614YkvAGciW0CH5Zi2pK4FXFJKXz1gZwDwrS/OZidwHE4mxUmRMvFkqaSqQEP5lyobg3cjG+5l0VsLGiyqR2QZbM7FnMLFBh536R4f2SqBm+p0nNn96L1bXwnsVb5akYUmd1iMpKw+dr4I4WMrTFNmbHQLcel0WwDIjAiOq7fZuhJ/WCCXv4t5E15lZps7QHZLq4MKJnsBoqLatE7py4C1vIiehQz+DOKGEfuXfC+aqjr7pn1ueH6ACChi8sZQA0BytCNnu8SDU3jczwX4O/kzjMhmZzPcK8+6315FyzLnq0II0MitcT3SEnWn5mz/fCLa4iVNz10DKBeBqaB8zwcdCR9SKRAeCf2S2yogVXSNVXmpqgdVF+tVa8YTawXIvyij+oMXH7QluwaG1kMgHONs=
+  app: ecommercep2
+  run:
+    - "rake db:migrate"
+    - restart
