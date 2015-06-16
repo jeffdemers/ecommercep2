@@ -1,11 +1,11 @@
- language: ruby
+language: ruby
   rvm:
     - 2.0.0-p481
-  branches:
-    only:
+branches:
+  only:
       - master
-  install:
-    - "travis_retry bundle install"
+install:
+  - "travis_retry bundle install"
 
-  before_script:
-    - psql -c 'create database travis_ci_test;' -U postgres
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
