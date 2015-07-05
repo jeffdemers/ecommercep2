@@ -110,7 +110,7 @@
         null,
         null,
         1,
-        0,
+        2,
         null,
         null,
         null,
@@ -128,7 +128,7 @@
       "/Users/jeffdemers/big_hippo/05week/ecommercep2/app/controllers/sessions_controller.rb": [
         1,
         1,
-        2,
+        3,
         null,
         null,
         1,
@@ -164,6 +164,6 @@
         null
       ]
     },
-    "timestamp": 1434413885
+    "timestamp": 1434494122
   }
 }
