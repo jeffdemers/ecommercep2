@@ -28,6 +28,7 @@
 }
 
 .footer {
+  width: 100%;
   background-color: lightgrey;
   height: 160px;
 
@@ -189,4 +190,9 @@
 
 body{
   font-family: 'PT Sans', sans-serif;
+}
+
+#footer {
+  background-color: black;
+  height: 200px;
 }
